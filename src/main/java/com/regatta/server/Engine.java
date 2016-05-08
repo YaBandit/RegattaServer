@@ -1,5 +1,6 @@
 package com.regatta.server;
 
+import com.regatta.server.core.RaceManager;
 import com.regatta.server.rest.ServerEngine;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

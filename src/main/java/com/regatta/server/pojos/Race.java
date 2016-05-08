@@ -29,8 +29,8 @@ public class Race {
     @Override
     public String toString() {
         return "Race{" +
-                ", type=" + type +
-                "entries=" + entries +
+                "type=" + type +
+                ", entries=" + entries +
                 ", raceNumber=" + raceNumber +
                 ", raceTime=" + raceTime +
                 ", isComplete=" + isComplete +
@@ -51,6 +51,10 @@ public class Race {
 
     }
 
+
+    public Date getRaceTime() {
+        return raceTime;
+    }
 
     public boolean isComplete() {
         return isComplete;

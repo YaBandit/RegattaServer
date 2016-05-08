@@ -1,23 +1,25 @@
 package com.regatta.server.rest;
 
+import com.regatta.server.core.RaceManager;
+import com.regatta.server.enums.RaceType;
+import com.regatta.server.pojos.Race;
 import org.json.simple.JSONObject;
-import org.restlet.Component;
-import org.restlet.engine.component.ServerRouter;
 import org.restlet.resource.Get;
 import org.restlet.resource.Post;
+import org.restlet.resource.ServerResource;
 
-public class RaceResource extends ServerRouter {
+import java.util.Date;
 
-    public RaceResource(Component component) {
-        super(component);
-    }
+public class RaceResource extends ServerResource {
+
+    private final RaceManager raceManager = RaceManager.getInstance();
 
     @Get
-    public JSONObject getVenue(String query) {
+    public JSONObject getRace(String query) {
 
-        final JSONObject jsonObject = new JSONObject();
+        final Race tempRace = new Race(RaceType.GENTS_NOVICE_PUNTING, 1, new Date());
 
-        return jsonObject;
+        return RaceManager.raceToJson(tempRace);
     }
 
     @Post
